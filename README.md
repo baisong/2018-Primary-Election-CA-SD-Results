@@ -9,11 +9,9 @@ I've included the partial TXT files in this repo as examples of the format. The 
 ### Usage
 
 ```
-mv Semifinal\ Official\ Results\ 06-05-2018.txt orig.txt
-./slicefile.sh
-rm orig.txt
-./txt2csv.awk slice_aa > results-part1.csv
-./txt2csv.awk slice_ab > results-part2.csv
-./txt2csv.awk slice_ac > results-part3.csv
-./txt2csv.awk slice_ad > results-part4.csv
+split -l 500000 -d Semifinal\ Official\ Results\ 06-05-2018.txt results-part --additional-suffix=.txt
+./txt2csv.awk results-part1.txt > results-part1.csv
+./txt2csv.awk results-part2.txt > results-part2.csv
+./txt2csv.awk results-part3.txt > results-part3.csv
+./txt2csv.awk results-part4.txt > results-part4.csv
 ```
