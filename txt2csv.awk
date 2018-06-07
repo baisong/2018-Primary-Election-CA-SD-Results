@@ -1,7 +1,8 @@
 #!/usr/bin/nawk -f
 # Transform a space-separated, double-quote-encased TXT file into CSV.
 # Usage: txt2csv.awk [in.txt] > [out.csv]
-# Note: Assumes that [in.txt] contains no `~`  
+# Note: Assumes that [in.txt] contains no `~`
+# Thank you Bruce Snow http://bit.ly/2JDeDZ1
 {#MAIN
   s=$0;c=0;f=0;         # Reset varibles for each line
   while (c<length(s)){  # Loop thru characters in line
